@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ALBAVPRIME — Bespoke White Dress Shirt · $79</title>
+<meta name="description" content="The $400 Savile Row aesthetic for $79. Hand-tailored bespoke white dress shirt, monogrammed to order. Made to your exact measurements."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ═══ TOKENS ═══ */
+:root{
+  --cream:#F4F1EB; --cream2:#EDE9E0; --cream3:#DDD8CE;
+  --ink:#1C1915; --ink2:#3A3630; --ink3:#6E6860;
+  --dark:#161310; --dark2:#1E1B18; --dark3:#2A2620;
+  --gold:#BFA06A; --gold2:rgba(191,160,106,.15); --gold3:rgba(191,160,106,.4);
+  --white:#FDFCF9;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --spring:cubic-bezier(.34,1.4,.64,1);
+}
+
+/* ═══ RESET ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;background:var(--cream);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/* ═══ NAV ═══ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.5rem;
+  background:rgba(244,241,235,.95);
+  backdrop-filter:blur(20px);
+  border-bottom:.5px solid transparent;
+  transition:border-color .4s;
+}
+#nav.scrolled{border-bottom-color:var(--cream3)}
+.nav-logo{font-family:var(--serif);font-size:1.125rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.nav-links{display:flex;gap:2rem}
+.nav-link{font-size:.5625rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-price{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--gold)}
+.nav-btn{font-family:var(--sans);font-size:.5rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;background:var(--ink);color:var(--cream);border:none;padding:.625rem 1.25rem;cursor:pointer;text-decoration:none;transition:background .25s}
+.nav-btn:hover{background:var(--dark)}
+@media(max-width:640px){.nav-links{display:none}}
+
+/* ═══ HERO ═══ */
+#hero{
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  padding-top:62px;
+  overflow:hidden;
+}
+
+/* Left — text */
+.hero-text{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:4rem 3rem 4rem 2rem;
+  position:relative;z-index:2;
+}
+.hero-kicker{
+  font-size:.5625rem;font-weight:400;letter-spacing:.45em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;
+  opacity:0;transform:translateY(12px);
+  animation:fadeUp .8s var(--ease) .1s forwards;
+}
+.hero-h1{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,4.5vw,4.5rem);
+  font-weight:400;line-height:1.04;letter-spacing:-.02em;
+  color:var(--ink);margin-bottom:1.5rem;
+  opacity:0;transform:translateY(16px);
+  animation:fadeUp .9s var(--ease) .25s forwards;
+}
+.hero-h1 em{font-style:italic;color:var(--ink2)}
+.hero-sub{
+  font-size:.9375rem;font-weight:300;line-height:1.75;
+  letter-spacing:.03em;color:var(--ink3);
+  max-width:380px;margin-bottom:2rem;
+  opacity:0;transform:translateY(12px);
+  animation:fadeUp .9s var(--ease) .4s forwards;
+}
+.hero-sub strong{font-weight:400;color:var(--ink)}
+.hero-actions{
+  display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;
+  opacity:0;transform:translateY(12px);
+  animation:fadeUp .9s var(--ease) .55s forwards;
+}
+.btn-primary{
+  font-family:var(--sans);font-size:.5625rem;font-weight:500;
+  letter-spacing:.28em;text-transform:uppercase;
+  background:var(--ink);color:var(--cream);
+  border:none;padding:1rem 2rem;cursor:pointer;
+  text-decoration:none;display:inline-block;
+  transition:all .3s var(--ease);
+}
+.btn-primary:hover{background:var(--dark);transform:translateY(-1px)}
+.btn-outline{
+  font-family:var(--sans);font-size:.5625rem;font-weight:400;
+  letter-spacing:.28em;text-transform:uppercase;
+  background:transparent;color:var(--ink);
+  border:1px solid var(--cream3);padding:1rem 2rem;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:all .3s var(--ease);
+}
+.btn-outline:hover{border-color:var(--ink)}
+.hero-meta{
+  display:flex;gap:2rem;
+  opacity:0;animation:fadeUp .9s var(--ease) .7s forwards;
+}
+.hero-meta-item{display:flex;flex-direction:column;gap:3px}
+.hmi-val{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink)}
+.hmi-label{font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink3)}
+
+/* Right — real photo */
+.hero-img{
+  position:relative;overflow:hidden;
+  background:var(--dark);
+}
+.hero-img img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center 20%;
+  opacity:0;animation:imgReveal 1.2s var(--ease) .3s forwards;
+  transform:scale(1.04);transition:transform 8s ease;
+}
+.hero-img:hover img{transform:scale(1)}
+.hero-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to right, rgba(244,241,235,.08) 0%, transparent 30%),
+             linear-gradient(to top, rgba(22,19,16,.5) 0%, transparent 50%);
+  pointer-events:none;
+}
+.hero-img-caption{
+  position:absolute;bottom:1.5rem;left:1.5rem;
+  font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;
+  color:rgba(253,252,249,.5);
+}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes imgReveal{to{opacity:1}}
+
+@media(max-width:768px){
+  #hero{grid-template-columns:1fr;grid-template-rows:auto auto}
+  .hero-text{padding:2rem 1.5rem;order:2}
+  .hero-img{height:55svh;order:1}
+  .hero-h1{font-size:clamp(2rem,8vw,3rem)}
+}
+
+/* ═══ TRUST STRIP ═══ */
+.trust-strip{
+  background:var(--dark);
+  padding:.875rem 0;overflow:hidden;
+}
+.trust-track{
+  display:flex;gap:0;
+  animation:scroll 30s linear infinite;
+  width:max-content;
+}
+.trust-track:hover{animation-play-state:paused}
+.trust-item{
+  display:flex;align-items:center;gap:.875rem;
+  padding:0 2rem;white-space:nowrap;
+  border-right:.5px solid rgba(244,241,235,.06);
+}
+.trust-dot{width:3px;height:3px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.trust-text{font-size:.5625rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,241,235,.45)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ PRODUCT SHOWCASE ═══ */
+#product{padding:6rem 0;background:var(--cream)}
+.product-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.product-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1.5rem;align-items:start;
+}
+/* Big hero photo left */
+.product-main-img{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;
+  background:var(--dark2);
+}
+.product-main-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .8s var(--ease);
+}
+.product-main-img:hover img{transform:scale(1.03)}
+/* Right column */
+.product-right{display:flex;flex-direction:column;gap:1.5rem}
+.product-detail-img{
+  overflow:hidden;background:var(--dark2);
+  aspect-ratio:16/10;
+}
+.product-detail-img img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center 30%;
+  transition:transform .8s var(--ease);
+}
+.product-detail-img:hover img{transform:scale(1.04)}
+.product-info{
+  padding:1.5rem;background:var(--white);
+  border:.5px solid var(--cream3);
+}
+.pi-kicker{font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:.625rem}
+.pi-title{font-family:var(--serif);font-size:1.5rem;font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:.75rem}
+.pi-title em{font-style:italic}
+.pi-body{font-size:.8125rem;line-height:1.75;color:var(--ink3);margin-bottom:1.25rem}
+.pi-specs{display:flex;flex-direction:column;gap:0}
+.pi-spec{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:.5px solid var(--cream2)}
+.pi-spec:last-child{border-bottom:none}
+.pi-spec-k{font-size:.5625rem;letter-spacing:.1em;color:var(--ink3)}
+.pi-spec-v{font-size:.6875rem;font-weight:400;color:var(--ink)}
+
+@media(max-width:768px){
+  .product-grid{grid-template-columns:1fr}
+  .product-main-img{aspect-ratio:4/3}
+}
+
+/* ═══ CONFIGURATOR ═══ */
+#configurator{background:var(--dark);padding:5rem 0 0}
+.config-header{max-width:1200px;margin:0 auto;padding:0 1.5rem 3rem}
+.section-kicker{font-size:.5625rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:.875rem}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:400;line-height:1.08;letter-spacing:-.02em;color:var(--white)}
+.section-title em{font-style:italic}
+.section-title-dark{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:400;line-height:1.08;letter-spacing:-.02em;color:var(--ink)}
+.section-title-dark em{font-style:italic}
+.gold-bar{width:32px;height:1px;background:var(--gold);margin:1.25rem 0}
+
+.config-wrap{
+  display:grid;grid-template-columns:1fr 440px;
+  border-top:.5px solid rgba(244,241,235,.08);
+}
+
+/* Preview pane */
+.cfg-preview{
+  position:sticky;top:62px;
+  height:calc(100svh - 62px);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  background:var(--dark2);
+  border-right:.5px solid rgba(244,241,235,.06);
+}
+.cfg-preview-bar{
+  padding:1rem 1.5rem;
+  border-bottom:.5px solid rgba(244,241,235,.06);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cfg-preview-label{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,241,235,.35)}
+.cfg-status{font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+.cfg-stage{
+  flex:1;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+/* The real shirt photo fills the stage */
+.cfg-shirt-photo{
+  position:absolute;inset:0;
+  transition:opacity .5s var(--ease);
+}
+.cfg-shirt-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 15%;
+}
+.cfg-shirt-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(22,19,16,.1) 0%, rgba(22,19,16,.5) 100%);
+  pointer-events:none;
+}
+/* Monogram badge overlay */
+.mono-badge{
+  position:absolute;
+  bottom:30%;right:20%;
+  font-family:var(--serif);
+  font-size:1.125rem;font-weight:400;
+  color:rgba(253,252,249,.4);
+  letter-spacing:.2em;
+  pointer-events:none;
+  transition:all .4s var(--ease);
+  text-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+/* Config label cards at bottom */
+.cfg-detail-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:.5px solid rgba(244,241,235,.06);
+}
+.cfg-detail-cell{
+  padding:.75rem 1rem;
+  border-right:.5px solid rgba(244,241,235,.06);
+  display:flex;flex-direction:column;gap:3px;
+}
+.cfg-detail-cell:last-child{border-right:none}
+.cdc-label{font-size:.4375rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(244,241,235,.3)}
+.cdc-val{font-size:.6875rem;font-weight:400;color:rgba(244,241,235,.8)}
+
+/* Options pane */
+.cfg-options{
+  background:var(--white);
+  overflow-y:auto;
+}
+.cs{padding:1.625rem 1.5rem;border-bottom:.5px solid var(--cream2)}
+.cs-head{display:flex;align-items:baseline;gap:.875rem;margin-bottom:1.125rem}
+.cs-n{font-family:var(--serif);font-size:1.875rem;font-weight:400;color:var(--cream3);line-height:1;flex-shrink:0}
+.cs-meta{flex:1}
+.cs-name{font-size:.5625rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);margin-bottom:2px}
+.cs-hint{font-size:.6875rem;color:var(--ink3)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{
+  border:1px solid var(--cream3);padding:.875rem;
+  cursor:pointer;transition:all .3s var(--ease);
+  background:var(--cream);text-align:left;position:relative;
+}
+.opt:hover{border-color:var(--ink2);background:var(--cream2)}
+.opt.on{border-color:var(--ink);background:var(--ink)}
+.opt-name{font-family:var(--serif);font-size:.9375rem;font-weight:400;color:var(--ink);display:block;margin-bottom:3px;transition:color .25s}
+.opt.on .opt-name{color:var(--cream)}
+.opt-desc{font-size:.625rem;line-height:1.5;color:var(--ink3);letter-spacing:.02em;transition:color .25s}
+.opt.on .opt-desc{color:rgba(244,241,235,.5)}
+.opt-tick{position:absolute;top:8px;right:8px;width:14px;height:14px;border:1px solid var(--cream3);opacity:0;transition:all .25s;display:flex;align-items:center;justify-content:center}
+.opt.on .opt-tick{opacity:1;background:var(--gold);border-color:var(--gold)}
+.opt.on .opt-tick::after{content:'';width:5px;height:3px;border-left:1.5px solid var(--dark);border-bottom:1.5px solid var(--dark);transform:rotate(-45deg) translateY(-1px);display:block}
+
+/* Monogram */
+.mono-big{
+  width:100%;background:var(--cream);border:1px solid var(--cream3);
+  color:var(--ink);font-family:var(--serif);font-size:1.75rem;font-weight:400;
+  letter-spacing:.3em;padding:.875rem 1rem;outline:none;
+  text-align:center;text-transform:uppercase;
+  transition:border-color .25s;margin-bottom:.875rem;
+}
+.mono-big:focus{border-color:var(--gold)}
+.mono-big::placeholder{color:var(--cream3);font-size:1.25rem}
+.pos-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.pos-pill{
+  border:1px solid var(--cream3);padding:.625rem .875rem;
+  cursor:pointer;transition:all .25s;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.pos-pill:hover{border-color:var(--ink2)}
+.pos-pill.on{border-color:var(--gold);background:rgba(191,160,106,.08)}
+.pos-pill.locked{border-color:rgba(191,160,106,.4);background:rgba(191,160,106,.06);cursor:default}
+.pp-name{font-size:.5rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.pp-price{font-family:var(--serif);font-size:.875rem;color:var(--gold)}
+.thread-info{
+  display:flex;align-items:center;gap:.875rem;
+  padding:.875rem;background:var(--cream);
+  border:1px solid var(--cream3);margin-top:.875rem;
+}
+.thread-sw{width:36px;height:36px;flex-shrink:0;background:linear-gradient(135deg,#FAFAF7,#EEECEA);border:.5px solid var(--cream3)}
+.thread-t strong{font-size:.5625rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:2px}
+.thread-t span{font-size:.6875rem;color:var(--ink3);line-height:1.5}
+
+/* Fit */
+.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.fit-opt{border:1px solid var(--cream3);padding:.75rem .5rem;text-align:center;cursor:pointer;transition:all .25s}
+.fit-opt:hover{border-color:var(--ink2)}
+.fit-opt.on{border-color:var(--ink);background:var(--ink)}
+.fo-name{font-size:.5rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:2px;transition:color .25s}
+.fo-desc{font-size:.5625rem;color:var(--ink3);transition:color .25s}
+.fit-opt.on .fo-name,.fit-opt.on .fo-desc{color:rgba(244,241,235,.8)}
+
+/* Price */
+.price-block{background:var(--dark);padding:1.5rem}
+.price-row{display:flex;justify-content:space-between;align-items:baseline;padding:.375rem 0}
+.pr-k{font-size:.5625rem;letter-spacing:.08em;color:rgba(244,241,235,.4)}
+.pr-v{font-size:.6875rem;font-weight:400;color:rgba(244,241,235,.7)}
+.price-divider{width:100%;height:.5px;background:rgba(244,241,235,.08);margin:.75rem 0}
+.price-total{display:flex;justify-content:space-between;align-items:baseline}
+.pt-label{font-size:.4375rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,241,235,.35)}
+.pt-val{font-family:var(--serif);font-size:2.75rem;font-weight:400;color:var(--gold);letter-spacing:-.02em}
+.price-note{font-size:.5625rem;color:rgba(244,241,235,.3);margin-top:.375rem;letter-spacing:.06em}
+.cta-wrap{background:var(--white);padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.btn-full{width:100%;text-align:center;justify-content:center;display:flex;align-items:center}
+.btn-note{font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);text-align:center}
+
+@media(max-width:900px){
+  .config-wrap{grid-template-columns:1fr}
+  .cfg-preview{position:relative;top:0;height:65vw;min-height:280px}
+}
+
+/* ═══ MEASUREMENTS — DARK ═══ */
+#measurements{background:var(--dark);padding:6rem 0;position:relative;overflow:hidden}
+#measurements::before{
+  content:'07';position:absolute;
+  font-family:var(--serif);font-size:clamp(12rem,30vw,24rem);font-weight:700;
+  color:rgba(244,241,235,.018);right:-2%;bottom:-5%;line-height:1;
+  pointer-events:none;letter-spacing:-.05em;
+}
+.measure-layout{
+  max-width:1100px;margin:3rem auto 0;padding:0 1.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+}
+.guide-item{
+  display:grid;grid-template-columns:36px 1fr;gap:.875rem;
+  padding:1rem 0;border-bottom:.5px solid rgba(244,241,235,.05);
+  opacity:0;transform:translateX(-12px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.guide-item.on{opacity:1;transform:translateX(0)}
+.gi-n{font-family:var(--serif);font-size:1.375rem;font-weight:400;color:rgba(191,160,106,.25);line-height:1.3}
+.gi-name{font-size:.5625rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--white);margin-bottom:4px}
+.gi-how{font-size:.75rem;line-height:1.65;color:rgba(244,241,235,.4)}
+.gi-tip{font-size:.625rem;color:var(--gold);margin-top:4px;letter-spacing:.04em;font-style:italic}
+
+/* form */
+.m-form{display:flex;flex-direction:column;gap:.875rem}
+.f-field{display:flex;flex-direction:column;gap:.375rem}
+.f-label{font-size:.5rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,241,235,.35)}
+.f-row{display:flex}
+.f-input{
+  flex:1;background:rgba(244,241,235,.04);
+  border:.5px solid rgba(244,241,235,.1);
+  color:var(--white);font-family:var(--sans);
+  font-size:.9375rem;font-weight:300;
+  padding:.75rem .875rem;outline:none;
+  transition:border-color .25s;
+}
+.f-input:focus{border-color:var(--gold)}
+.f-input::placeholder{color:rgba(244,241,235,.18)}
+.f-unit{
+  padding:.75rem;background:rgba(244,241,235,.04);
+  border:.5px solid rgba(244,241,235,.1);border-left:none;
+  font-size:.4375rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(244,241,235,.3);display:flex;align-items:center;flex-shrink:0;
+}
+.f-hint{font-size:.5625rem;color:rgba(244,241,235,.25);letter-spacing:.04em}
+.f-2col{display:grid;grid-template-columns:1fr 1fr;gap:.625rem}
+.f-select{
+  width:100%;background:rgba(244,241,235,.04);
+  border:.5px solid rgba(244,241,235,.1);
+  color:var(--white);font-family:var(--sans);
+  font-size:.9375rem;font-weight:300;
+  padding:.75rem .875rem;outline:none;
+  transition:border-color .25s;appearance:none;
+}
+.f-select:focus{border-color:var(--gold)}
+.f-textarea{
+  width:100%;background:rgba(244,241,235,.04);
+  border:.5px solid rgba(244,241,235,.1);
+  color:var(--white);font-family:var(--sans);
+  font-size:.875rem;font-weight:300;
+  padding:.75rem .875rem;outline:none;
+  transition:border-color .25s;resize:vertical;min-height:72px;
+}
+.f-textarea:focus{border-color:var(--gold)}
+.f-textarea::placeholder{color:rgba(244,241,235,.18)}
+
+@media(max-width:768px){.measure-layout{grid-template-columns:1fr;gap:2.5rem}}
+
+/* ═══ ORDER FORM — CREAM ═══ */
+#order-form{background:var(--cream);padding:6rem 0}
+.order-inner{max-width:660px;margin:0 auto;padding:0 1.5rem}
+.order-form-field{display:flex;flex-direction:column;gap:.375rem;margin-bottom:.75rem}
+.order-label{font-size:.5rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--ink3)}
+.order-input{
+  width:100%;background:var(--cream2);
+  border:.5px solid var(--cream3);color:var(--ink);
+  font-family:var(--sans);font-size:.9375rem;font-weight:300;
+  padding:.75rem .875rem;outline:none;
+  transition:border-color .25s;
+}
+.order-input:focus{border-color:var(--gold)}
+.order-input::placeholder{color:var(--cream3)}
+.order-textarea{
+  width:100%;background:var(--cream2);
+  border:.5px solid var(--cream3);color:var(--ink);
+  font-family:var(--sans);font-size:.875rem;font-weight:300;
+  padding:.75rem .875rem;outline:none;
+  transition:border-color .25s;resize:vertical;min-height:72px;
+}
+.order-textarea:focus{border-color:var(--gold)}
+.order-textarea::placeholder{color:var(--cream3)}
+.o-2col{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.warning{border:.5px solid rgba(191,160,106,.35);padding:1.25rem;background:rgba(191,160,106,.04);margin-top:1.5rem}
+.w-title{font-size:.4375rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.w-text{font-size:.75rem;line-height:1.7;color:var(--ink3)}
+.w-check{display:flex;align-items:flex-start;gap:.75rem;margin-top:.875rem;cursor:pointer}
+.w-check input{width:15px;height:15px;accent-color:var(--gold);flex-shrink:0;margin-top:2px}
+.w-check span{font-size:.6875rem;line-height:1.6;color:var(--ink2)}
+.submit-btn{
+  width:100%;background:var(--ink);color:var(--cream);
+  font-family:var(--sans);font-size:.5625rem;font-weight:500;
+  letter-spacing:.28em;text-transform:uppercase;
+  padding:1.125rem;border:none;cursor:pointer;
+  transition:background .3s;margin-top:1.5rem;
+}
+.submit-btn:hover:not(:disabled){background:var(--dark)}
+.submit-btn:disabled{opacity:.3;cursor:not-allowed}
+.no-pay-note{text-align:center;font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin-top:.75rem}
+#success{display:none;text-align:center;padding:3rem 0}
+.success-line{width:32px;height:.5px;background:var(--gold);margin:0 auto 1.5rem}
+.success-h{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--ink);line-height:1.2}
+.success-h em{font-style:italic}
+.order-id{font-family:var(--serif);font-size:1.25rem;color:var(--gold);margin:1rem 0;letter-spacing:.05em}
+.success-sub{font-size:.875rem;line-height:1.75;color:var(--ink3);max-width:420px;margin:0 auto}
+
+/* ═══ PACKAGING SECTION ═══ */
+#packaging{
+  background:var(--dark2);
+  display:grid;grid-template-columns:1.1fr 1fr;
+  min-height:60svh;overflow:hidden;
+}
+.pkg-img{position:relative;overflow:hidden}
+.pkg-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.pkg-img:hover img{transform:scale(1.03)}
+.pkg-content{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:4rem 3rem;
+}
+.pkg-price{font-family:var(--serif);font-size:3rem;font-weight:400;color:var(--gold);line-height:1;margin-bottom:.5rem}
+.pkg-label{font-size:.5rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(244,241,235,.35);margin-bottom:1.5rem}
+.pkg-title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:400;color:var(--white);line-height:1.15;margin-bottom:1rem}
+.pkg-title em{font-style:italic}
+.pkg-body{font-size:.875rem;line-height:1.75;color:rgba(244,241,235,.45);margin-bottom:2rem}
+.pkg-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2rem}
+.pkg-feat{font-size:.5625rem;letter-spacing:.15em;color:rgba(244,241,235,.5);display:flex;align-items:center;gap:.625rem}
+.pkg-feat::before{content:'✦';color:var(--gold);font-size:.5rem}
+@media(max-width:768px){
+  #packaging{grid-template-columns:1fr}
+  .pkg-img{height:60vw}
+  .pkg-content{padding:2.5rem 1.5rem}
+}
+
+/* ═══ JOURNAL ═══ */
+#journal{background:var(--dark3);padding:6rem 0}
+.journal-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,241,235,.05);margin-top:3rem}
+.j-card{background:var(--dark3);padding:2rem 1.5rem;opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.j-card.on{opacity:1;transform:translateY(0)}
+.j-num{font-family:var(--serif);font-size:3rem;font-weight:400;color:rgba(191,160,106,.12);line-height:1;margin-bottom:1rem}
+.j-title{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--white);line-height:1.25;margin-bottom:.875rem}
+.j-title em{font-style:italic}
+.j-body{font-size:.75rem;line-height:1.75;color:rgba(244,241,235,.4)}
+@media(max-width:768px){.journal-grid{grid-template-columns:1fr}}
+
+/* ═══ GUARANTEE ═══ */
+#guarantee{background:var(--gold);padding:3rem 1.5rem;text-align:center}
+#guarantee h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:400;color:var(--dark);margin-bottom:.875rem}
+#guarantee p{font-size:.9375rem;line-height:1.7;color:rgba(22,19,16,.6);max-width:500px;margin:0 auto 1.75rem}
+.btn-dark-solid{font-family:var(--sans);font-size:.5625rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;background:var(--dark);color:var(--cream);border:none;padding:1rem 2rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .25s}
+.btn-dark-solid:hover{background:var(--ink)}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--ink);padding:3rem 1.5rem}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2rem}
+.f-logo{font-family:var(--serif);font-size:1.125rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:.625rem}
+.f-tagline{font-size:.6875rem;line-height:1.7;color:rgba(244,241,235,.35);max-width:240px}
+.f-col-title{font-size:.4375rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.875rem}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.f-links a{font-size:.6875rem;color:rgba(244,241,235,.35);text-decoration:none;letter-spacing:.05em;transition:color .2s}
+.f-links a:hover{color:var(--cream)}
+.f-copy{font-size:.5rem;color:rgba(244,241,235,.2);letter-spacing:.1em;margin-top:.875rem}
+@media(max-width:640px){.footer-inner{grid-template-columns:1fr}}
+
+/* ═══ TOAST ═══ */
+.toast{
+  position:fixed;bottom:1.5rem;left:50%;
+  transform:translateX(-50%) translateY(80px);
+  background:var(--ink);color:var(--cream);
+  border:.5px solid rgba(244,241,235,.12);
+  padding:.75rem 1.5rem;font-size:.6875rem;letter-spacing:.06em;
+  opacity:0;transition:all .4s var(--ease);
+  pointer-events:none;z-index:999;white-space:nowrap;
+}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.toast.gold{border-color:var(--gold);color:var(--gold)}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">ALBAVPRIME</div>
+  <nav class="nav-links">
+    <a class="nav-link" href="#product">The Shirt</a>
+    <a class="nav-link" href="#configurator">Configure</a>
+    <a class="nav-link" href="#journal">Journal</a>
+  </nav>
+  <div class="nav-right">
+    <span class="nav-price" id="nav-price">$79</span>
+    <a href="#configurator" class="nav-btn">Order Now</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-kicker">Savile Row Aesthetic · Made to Order</div>
+    <h1 class="hero-h1">
+      The $400<br>dress shirt.<br><em>For $79.</em>
+    </h1>
+    <p class="hero-sub">
+      Hand-tailored to your exact measurements. <strong>Non-iron performance cotton.</strong> Monogrammed with your initials — tone-sur-tone white, by artisans. Delivered in 3–4 weeks.
+    </p>
+    <div class="hero-actions">
+      <a href="#configurator" class="btn-primary">Design Your Shirt</a>
+      <a href="#product" class="btn-outline">See the Details</a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hmi-val">$79</span>
+        <span class="hmi-label">Total price</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hmi-val">3–4</span>
+        <span class="hmi-label">Weeks delivery</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hmi-val">∞</span>
+        <span class="hmi-label">Fit guarantee</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="AlbavprimeShirt.png" alt="ALBAVPRIME Bespoke White Dress Shirt — folded, showing Savile Row spread collar and mother of pearl buttons" loading="eager"/>
+    <div class="hero-img-overlay"></div>
+    <div class="hero-img-caption">ALBAVPRIME · Bespoke White Dress Shirt</div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-track">
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Hand-tailored · 3–4 weeks</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Tone-sur-tone monogram included</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Non-iron performance cotton</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Perfect Fit Guarantee</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Savile Row aesthetic · $79</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Every order founder-reviewed</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Free remake if it doesn't fit</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">$20 deposit · balance at Ready to Fly</span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Hand-tailored · 3–4 weeks</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Tone-sur-tone monogram included</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Non-iron performance cotton</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Perfect Fit Guarantee</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Savile Row aesthetic · $79</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Every order founder-reviewed</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Free remake if it doesn't fit</span></div>
+    <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">$20 deposit · balance at Ready to Fly</span></div>
+  </div>
+</div>
+
+<!-- ═══ PRODUCT SHOWCASE ═══ -->
+<section id="product">
+  <div class="product-inner">
+    <div class="reveal"><span class="section-kicker">The Shirt</span></div>
+    <h2 class="section-title-dark reveal d1">
+      Craft you can<br><em>see and feel</em>
+    </h2>
+    <div class="gold-bar reveal d2"></div>
+
+    <div class="product-grid" style="margin-top:2.5rem">
+      <!-- Main large photo: Full_Set editorial -->
+      <div class="product-main-img reveal">
+        <img src="Full_Set.png"
+          alt="ALBAVPRIME white dress shirt on mannequin, editorial product shot showing full silhouette, cuff detail, and collar close-up"
+          loading="lazy"/>
+      </div>
+
+      <!-- Right column -->
+      <div class="product-right">
+        <!-- Collar detail photo -->
+        <div class="product-detail-img reveal d1">
+          <img src="CoAo_MadeInVN.png"
+            alt="ALBAVPRIME collar detail — wide spread Savile Row collar with brand label, Made in Viet Nam"
+            loading="lazy"/>
+        </div>
+
+        <!-- Product info card -->
+        <div class="product-info reveal d2">
+          <div class="pi-kicker">Construction Details</div>
+          <h3 class="pi-title">Built like a<br><em>Savile Row original</em></h3>
+          <p class="pi-body">Every shirt is laser-cut to your exact measurements, hand-tailored by artisans in Vietnam, then monogrammed with tone-sur-tone white thread. The collar takes 24 discrete hand operations — 18 more than any fast-fashion alternative.</p>
+          <div class="pi-specs">
+            <div class="pi-spec">
+              <span class="pi-spec-k">Fabric</span>
+              <span class="pi-spec-v">Non-iron performance cotton</span>
+            </div>
+            <div class="pi-spec">
+              <span class="pi-spec-k">Color</span>
+              <span class="pi-spec-v">White — Phase 1</span>
+            </div>
+            <div class="pi-spec">
+              <span class="pi-spec-k">Monogram thread</span>
+              <span class="pi-spec-v">Tone-sur-tone white</span>
+            </div>
+            <div class="pi-spec">
+              <span class="pi-spec-k">Buttons</span>
+              <span class="pi-spec-v">Mother of Pearl</span>
+            </div>
+            <div class="pi-spec">
+              <span class="pi-spec-k">Production</span>
+              <span class="pi-spec-v">Make-to-Order · 3–4 weeks</span>
+            </div>
+            <div class="pi-spec">
+              <span class="pi-spec-k">Price</span>
+              <span class="pi-spec-v" style="color:var(--gold);font-family:var(--serif);font-size:1.125rem;">$79</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Label detail photo — full width editorial -->
+    <div style="margin-top:1.5rem;overflow:hidden;aspect-ratio:21/9;position:relative;" class="reveal">
+      <img src="Co_Ao_.png"
+        alt="ALBAVPRIME inner collar label — EST. 2023 · QUIET LUXURY, showing brand heritage tag"
+        loading="lazy"
+        style="width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform .8s var(--ease);"
+        onmouseover="this.style.transform='scale(1.02)'"
+        onmouseout="this.style.transform='scale(1)'"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(22,19,16,.3) 0%,transparent 50%);pointer-events:none"></div>
+      <div style="position:absolute;bottom:2rem;left:2rem;">
+        <div style="font-size:.5rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(253,252,249,.5);margin-bottom:.375rem;">Inner Collar Label</div>
+        <div style="font-family:var(--serif);font-size:1.5rem;font-weight:400;color:rgba(253,252,249,.9);">ALBAVPRIME · <em style="font-style:italic;">EST. 2023</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONFIGURATOR ═══ -->
+<section id="configurator">
+  <div class="config-header">
+    <div class="section-kicker reveal">Step 1 of 3 — Configure</div>
+    <h2 class="section-title reveal d1">Design your<br><em>signature shirt</em></h2>
+  </div>
+
+  <div class="config-wrap">
+    <!-- PREVIEW with real photo -->
+    <div class="cfg-preview">
+      <div class="cfg-preview-bar">
+        <span class="cfg-preview-label">Live preview</span>
+        <span class="cfg-status" id="cfg-status">Savile Row Spread · Barrel Cuff</span>
+      </div>
+      <div class="cfg-stage">
+        <!-- Real shirt photo as configurator background -->
+        <div class="cfg-shirt-photo" id="cfg-photo">
+          <img src="Full_Set.png"
+            alt="ALBAVPRIME shirt configuration preview"
+            style="width:100%;height:100%;object-fit:cover;object-position:center 10%;"/>
+        </div>
+        <div class="cfg-shirt-overlay"></div>
+        <!-- Monogram overlay on cuff area -->
+        <div class="mono-badge" id="mono-badge"></div>
+      </div>
+      <div class="cfg-detail-strip">
+        <div class="cfg-detail-cell">
+          <span class="cdc-label">Collar</span>
+          <span class="cdc-val" id="dc-collar">Savile Row Spread</span>
+        </div>
+        <div class="cfg-detail-cell">
+          <span class="cdc-label">Cuff</span>
+          <span class="cdc-val" id="dc-cuff">Barrel Cuff</span>
+        </div>
+        <div class="cfg-detail-cell">
+          <span class="cdc-label">Monogram</span>
+          <span class="cdc-val" id="dc-mono">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTIONS -->
+    <div class="cfg-options">
+
+      <!-- 01 Collar -->
+      <div class="cs">
+        <div class="cs-head">
+          <span class="cs-n">01</span>
+          <div class="cs-meta">
+            <div class="cs-name">Collar Style</div>
+            <div class="cs-hint">Both included — no extra charge</div>
+          </div>
+        </div>
+        <div class="opts">
+          <button class="opt on" onclick="setCollar('spread',this)">
+            <span class="opt-name">Savile Row Spread</span>
+            <span class="opt-desc">Wide spread — modern power collar. Perfect with a Windsor knot.</span>
+            <span class="opt-tick"></span>
+          </button>
+          <button class="opt" onclick="setCollar('classic',this)">
+            <span class="opt-name">The Classic</span>
+            <span class="opt-desc">Traditional point — timeless. The Brioni heritage standard.</span>
+            <span class="opt-tick"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 02 Cuff -->
+      <div class="cs">
+        <div class="cs-head">
+          <span class="cs-n">02</span>
+          <div class="cs-meta">
+            <div class="cs-name">Cuff Style</div>
+            <div class="cs-hint">French cuff requires cufflinks</div>
+          </div>
+        </div>
+        <div class="opts">
+          <button class="opt on" onclick="setCuff('barrel',this)">
+            <span class="opt-name">Barrel Cuff</span>
+            <span class="opt-desc">Single button. Business standard. Clean for every occasion.</span>
+            <span class="opt-tick"></span>
+          </button>
+          <button class="opt" onclick="setCuff('french',this)">
+            <span class="opt-name">French Cuff</span>
+            <span class="opt-desc">Double fold. The formal statement. Brioni's signature.</span>
+            <span class="opt-tick"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 03 Monogram -->
+      <div class="cs">
+        <div class="cs-head">
+          <span class="cs-n">03</span>
+          <div class="cs-meta">
+            <div class="cs-name">Monogram</div>
+            <div class="cs-hint">Left Cuff included free · Max 2 add-on positions</div>
+          </div>
+        </div>
+        <input type="text" class="mono-big" id="mono-in" maxlength="3"
+          placeholder="J · D · R"
+          oninput="onMono(this.value)"
+          autocomplete="off" spellcheck="false"/>
+        <div class="pos-grid">
+          <div class="pos-pill locked">
+            <span class="pp-name">Left Cuff</span>
+            <span class="pp-price">Free</span>
+          </div>
+          <div class="pos-pill" data-pos="chest_pocket" onclick="togglePos(this)">
+            <span class="pp-name">Chest Pocket</span>
+            <span class="pp-price">+$5</span>
+          </div>
+          <div class="pos-pill" data-pos="inner_collar" onclick="togglePos(this)">
+            <span class="pp-name">Inner Collar</span>
+            <span class="pp-price">+$5</span>
+          </div>
+          <div class="pos-pill" data-pos="right_cuff" onclick="togglePos(this)">
+            <span class="pp-name">Right Cuff</span>
+            <span class="pp-price">+$5</span>
+          </div>
+        </div>
+        <div class="thread-info">
+          <div class="thread-sw"></div>
+          <div class="thread-t">
+            <strong>Tone-sur-tone white thread</strong>
+            <span>White on white — the Brioni quiet luxury standard. Visible only as a subtle texture catch in light.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 Fit -->
+      <div class="cs">
+        <div class="cs-head">
+          <span class="cs-n">04</span>
+          <div class="cs-meta">
+            <div class="cs-name">Fit Preference</div>
+            <div class="cs-hint">Guides our pattern adjustment</div>
+          </div>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-opt" onclick="setFit('slim',this)">
+            <span class="fo-name">Slim</span>
+            <span class="fo-desc">Close to body</span>
+          </div>
+          <div class="fit-opt on" onclick="setFit('regular',this)">
+            <span class="fo-name">Regular</span>
+            <span class="fo-desc">Comfortable room</span>
+          </div>
+          <div class="fit-opt" onclick="setFit('relaxed',this)">
+            <span class="fo-name">Relaxed</span>
+            <span class="fo-desc">Generous fit</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="price-block">
+        <div class="price-row"><span class="pr-k">Bespoke dress shirt</span><span class="pr-v">$79.00</span></div>
+        <div class="price-row"><span class="pr-k">Monogram — Left Cuff</span><span class="pr-v">Included</span></div>
+        <div class="price-row" id="addon-row" style="display:none">
+          <span class="pr-k" id="addon-k">Embroidery add-ons</span>
+          <span class="pr-v" id="addon-v">+$0</span>
+        </div>
+        <div class="price-divider"></div>
+        <div class="price-total">
+          <span class="pt-label">Your total</span>
+          <span class="pt-val" id="price-disp">$79</span>
+        </div>
+        <div class="price-note">$20 deposit to start · balance collected at Ready to Fly</div>
+      </div>
+      <div class="cta-wrap">
+        <a href="#measurements" class="btn-primary btn-full">Continue — Enter Measurements →</a>
+        <div class="btn-note">No payment required at this step</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MEASUREMENTS ═══ -->
+<section id="measurements">
+  <div class="product-inner" style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
+    <div class="section-kicker reveal" style="color:rgba(191,160,106,.7)">Step 2 of 3 — Measurements</div>
+    <h2 class="section-title reveal d1" style="margin-top:.625rem">
+      Seven numbers.<br><em>One perfect shirt.</em>
+    </h2>
+    <div class="gold-bar reveal d2"></div>
+    <p class="reveal d3" style="font-size:.9375rem;line-height:1.75;color:rgba(244,241,235,.45);max-width:480px;margin-top:.875rem;letter-spacing:.03em;">
+      Measure in inches. Follow each guide carefully. Your founding team personally reviews every order before fabric is cut.
+    </p>
+  </div>
+
+  <div class="measure-layout">
+    <div>
+      <div class="guide-item"><span class="gi-n">01</span><div><div class="gi-name">Neck circumference</div><div class="gi-how">Tape around base of neck at Adam's apple. Add ½" for button comfort.</div><div class="gi-tip">→ This number appears on your shirt tag (e.g. 15½")</div></div></div>
+      <div class="guide-item"><span class="gi-n">02</span><div><div class="gi-name">Shoulder width</div><div class="gi-how">Tip to tip across upper back. The single most critical measurement.</div><div class="gi-tip">→ 1cm error here shifts the full silhouette</div></div></div>
+      <div class="guide-item"><span class="gi-n">03</span><div><div class="gi-name">Chest circumference</div><div class="gi-how">Around the fullest part of chest, across nipples. Breathe normally.</div></div></div>
+      <div class="guide-item"><span class="gi-n">04</span><div><div class="gi-name">Waist / belly</div><div class="gi-how">Widest part of your midsection. Do not hold your breath.</div></div></div>
+      <div class="guide-item"><span class="gi-n">05</span><div><div class="gi-name">Sleeve length</div><div class="gi-how">Shoulder tip to wrist bone where you want the cuff to sit.</div><div class="gi-tip">→ Savile Row: cuff shows 1.5–2cm below your jacket sleeve</div></div></div>
+      <div class="guide-item"><span class="gi-n">06</span><div><div class="gi-name">Bicep + Wrist</div><div class="gi-how">Widest bicep circumference + wrist bone circumference.</div></div></div>
+      <div class="guide-item"><span class="gi-n">07</span><div><div class="gi-name">Shirt length</div><div class="gi-how">Neck base straight down to hem. Tucked-in style needs extra length.</div></div></div>
+    </div>
+
+    <div class="m-form">
+      <div class="f-field">
+        <label class="f-label">01 — Neck circumference</label>
+        <div class="f-row"><input type="number" step=".25" class="f-input" id="m-neck" placeholder="15.5"/><div class="f-unit">inch</div></div>
+        <span class="f-hint">Most common US men's: 15–16.5"</span>
+      </div>
+      <div class="f-field">
+        <label class="f-label">02 — Shoulder width</label>
+        <div class="f-row"><input type="number" step=".25" class="f-input" id="m-shoulder" placeholder="17.5"/><div class="f-unit">inch</div></div>
+      </div>
+      <div class="f-field">
+        <label class="f-label">03 — Chest circumference</label>
+        <div class="f-row"><input type="number" step=".25" class="f-input" id="m-chest" placeholder="40"/><div class="f-unit">inch</div></div>
+      </div>
+      <div class="f-field">
+        <label class="f-label">04 — Waist / belly</label>
+        <div class="f-row"><input type="number" step=".25" class="f-input" id="m-waist" placeholder="34"/><div class="f-unit">inch</div></div>
+      </div>
+      <div class="f-2col">
+        <div class="f-field">
+          <label class="f-label">05 — Sleeve length</label>
+          <div class="f-row"><input type="number" step=".25" class="f-input" id="m-sleeve" placeholder="34"/><div class="f-unit">in</div></div>
+        </div>
+        <div class="f-field">
+          <label class="f-label">06a — Bicep</label>
+          <div class="f-row"><input type="number" step=".25" class="f-input" id="m-bicep" placeholder="14"/><div class="f-unit">in</div></div>
+        </div>
+      </div>
+      <div class="f-2col">
+        <div class="f-field">
+          <label class="f-label">06b — Wrist</label>
+          <div class="f-row"><input type="number" step=".25" class="f-input" id="m-wrist" placeholder="7"/><div class="f-unit">in</div></div>
+        </div>
+        <div class="f-field">
+          <label class="f-label">07 — Shirt length</label>
+          <div class="f-row"><input type="number" step=".25" class="f-input" id="m-length" placeholder="31"/><div class="f-unit">in</div></div>
+        </div>
+      </div>
+      <div class="f-field">
+        <label class="f-label">Reference shirt (brand + size you wear well)</label>
+        <input type="text" class="f-input" id="m-ref" placeholder="e.g. Brooks Brothers Milano 15.5-34" style="width:100%"/>
+        <span class="f-hint">Helps us cross-check your measurements for best fit</span>
+      </div>
+      <a href="#order-form" class="btn-primary btn-full" style="margin-top:.5rem;display:flex;align-items:center;justify-content:center;">Continue — Your Details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ORDER FORM ═══ -->
+<section id="order-form">
+  <div class="order-inner">
+    <div class="section-kicker reveal">Step 3 of 3 — Your Details</div>
+    <h2 class="section-title-dark reveal d1" style="margin-top:.625rem">
+      <em>Almost there.</em><br>Your atelier awaits.
+    </h2>
+    <div class="gold-bar reveal d2"></div>
+
+    <div id="form-fields" style="margin-top:2rem">
+      <div class="o-2col">
+        <div class="order-form-field">
+          <label class="order-label">First name</label>
+          <input type="text" class="order-input" id="f-first" placeholder="James"/>
+        </div>
+        <div class="order-form-field">
+          <label class="order-label">Last name</label>
+          <input type="text" class="order-input" id="f-last" placeholder="Richardson"/>
+        </div>
+      </div>
+      <div class="order-form-field">
+        <label class="order-label">Email</label>
+        <input type="email" class="order-input" id="f-email" placeholder="james@company.com"/>
+      </div>
+      <div class="order-form-field">
+        <label class="order-label">Phone (US)</label>
+        <input type="tel" class="order-input" id="f-phone" placeholder="+1 (415) 555-0172"/>
+      </div>
+      <div class="order-form-field">
+        <label class="order-label">Shipping address</label>
+        <input type="text" class="order-input" id="f-addr" placeholder="123 Main St, New York, NY 10001"/>
+      </div>
+      <div class="order-form-field">
+        <label class="order-label">Notes for your tailor (optional)</label>
+        <textarea class="order-textarea" id="f-notes" placeholder="e.g. I have broad shoulders, slightly longer left arm..."></textarea>
+      </div>
+
+      <div class="warning">
+        <div class="w-title">Savile Row Bespoke Notice</div>
+        <p class="w-text">This is a bespoke, hand-tailored garment made exclusively to your personal measurements and monogram specifications. As with all Savile Row-tradition custom garments, this order cannot be returned or exchanged due to incorrect information provided by the customer. Please review your details carefully before proceeding.</p>
+        <label class="w-check">
+          <input type="checkbox" id="w-chk" onchange="checkReady()"/>
+          <span>I understand this is a custom, non-refundable garment. I have verified my measurements and monogram details.</span>
+        </label>
+      </div>
+
+      <button class="submit-btn" id="sub-btn" onclick="submitOrder()" disabled>
+        Submit Order — We'll Review &amp; Confirm Within 24 Hours
+      </button>
+      <div class="no-pay-note">No payment now · $20 deposit link sent after founder review</div>
+    </div>
+
+    <div id="success">
+      <div class="success-line"></div>
+      <h3 class="success-h">Your order is in<br><em>the atelier queue.</em></h3>
+      <div class="order-id" id="ord-id"></div>
+      <p class="success-sub">Our founding team will personally review your measurements within 24 hours and send a confirmation email with your $20 deposit link to begin production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PACKAGING ═══ -->
+<section id="packaging">
+  <div class="pkg-img">
+    <img src="FullBox_Alba.png"
+      alt="ALBAVPRIME luxury gift box — matte black with gold foil branding, shirt presented with navy ribbon and tissue paper, atelier shopping bag"
+      loading="lazy"/>
+  </div>
+  <div class="pkg-content">
+    <div class="pkg-price">$25</div>
+    <div class="pkg-label">Optional Add-on · US Flat Rate</div>
+    <h2 class="pkg-title">The unboxing<br><em>experience</em></h2>
+    <p class="pkg-body">Your shirt deserves an arrival worthy of what's inside. Our signature black gift box with gold foil, tissue paper, and navy ribbon makes it a gift — even to yourself.</p>
+    <div class="pkg-features">
+      <div class="pkg-feat">Matte black gift box with gold foil ALBAVPRIME branding</div>
+      <div class="pkg-feat">Archival tissue paper + navy AVP ribbon</div>
+      <div class="pkg-feat">Flat-rate FedEx or UPS to all 50 US states</div>
+      <div class="pkg-feat">Collected with balance at Ready to Fly — not upfront</div>
+    </div>
+    <a href="#configurator" class="btn-primary">Add packaging at checkout</a>
+  </div>
+</section>
+
+<!-- ═══ JOURNAL ═══ -->
+<section id="journal">
+  <div class="journal-inner">
+    <div class="section-kicker reveal" style="color:rgba(191,160,106,.7)">The Atelier Journal</div>
+    <h2 class="section-title reveal d1" style="margin-top:.625rem">
+      The craft behind<br><em>every thread</em>
+    </h2>
+    <div class="journal-grid">
+      <div class="j-card">
+        <div class="j-num">I</div>
+        <h3 class="j-title">The cloth that<br><em>never surrenders</em></h3>
+        <p class="j-body">How a 140-year-old cotton tradition meets the 6am flight to Chicago. Long-staple, molecular crosslink — no resin, no stiffness. Breathes like cotton, presses like linen, never needs an iron.</p>
+      </div>
+      <div class="j-card">
+        <div class="j-num">II</div>
+        <h3 class="j-title">24 steps to a<br><em>Savile Row collar</em></h3>
+        <p class="j-body">A collar is not sewn. It is built. 18 hours, 3 artisans, 1mm symmetry tolerance. <em>Animare il colletto</em> — giving the collar life. The standard that separates craft from commodity.</p>
+      </div>
+      <div class="j-card">
+        <div class="j-num">III</div>
+        <h3 class="j-title">Perfect fit<br><em>or we remake it</em></h3>
+        <p class="j-body">Every order is personally reviewed by our founding team before fabric is cut. If your shirt doesn't fit perfectly, we remake it at zero cost. You keep the original. This is our founding promise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<div id="guarantee">
+  <h2>Perfect Fit Guarantee</h2>
+  <p>If your first ALBAVPRIME shirt does not fit perfectly, we remake it at zero cost. No questions asked. This is our founding promise to every customer.</p>
+  <a href="#configurator" class="btn-dark-solid">Design Your Shirt Now</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="f-logo">ALBAVPRIME</div>
+      <p class="f-tagline">The $400 Savile Row aesthetic — for $79. Hand-tailored. Monogrammed. Yours alone.</p>
+      <p class="f-copy" style="margin-top:.875rem;">© 2026 ALBAVPRIME · albavprime.com</p>
+    </div>
+    <div>
+      <div class="f-col-title">The Order</div>
+      <ul class="f-links">
+        <li><a href="#product">The Shirt</a></li>
+        <li><a href="#configurator">Design Yours</a></li>
+        <li><a href="#measurements">Measurement Guide</a></li>
+        <li><a href="#journal">Atelier Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Assurance</div>
+      <ul class="f-links">
+        <li><a href="#">Perfect Fit Guarantee</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Return Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// CONFIG
+const GS_URL  = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+const TG_TOK  = 'YOUR_TELEGRAM_BOT_TOKEN';
+const TG_CHAT = 'YOUR_TELEGRAM_CHAT_ID';
+
+// State
+const S = { collar:'spread', cuff:'barrel', fit:'regular', mono:'', positions:['left_cuff'], total:79, addons:0 };
+
+// Nav scroll
+window.addEventListener('scroll',()=>{ document.getElementById('nav').classList.toggle('scrolled',scrollY>40) });
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target) } })
+},{ threshold:.1 });
+document.querySelectorAll('.reveal,.guide-item,.j-card').forEach(el=>ro.observe(el));
+
+// Collar
+function setCollar(v,btn){
+  S.collar=v;
+  btn.closest('.opts').querySelectorAll('.opt').forEach(o=>o.classList.remove('on'));
+  btn.classList.add('on');
+  const n = v==='spread'?'Savile Row Spread':'The Classic';
+  document.getElementById('cfg-status').textContent = n+' · '+(S.cuff==='barrel'?'Barrel Cuff':'French Cuff');
+  document.getElementById('dc-collar').textContent = n;
+  pulseCfg();
+}
+
+// Cuff
+function setCuff(v,btn){
+  S.cuff=v;
+  btn.closest('.opts').querySelectorAll('.opt').forEach(o=>o.classList.remove('on'));
+  btn.classList.add('on');
+  const n = v==='barrel'?'Barrel Cuff':'French Cuff';
+  document.getElementById('cfg-status').textContent = (S.collar==='spread'?'Savile Row Spread':'The Classic')+' · '+n;
+  document.getElementById('dc-cuff').textContent = n;
+  pulseCfg();
+}
+
+// Fit
+function setFit(v,el){
+  S.fit=v;
+  el.closest('.fit-grid').querySelectorAll('.fit-opt').forEach(o=>o.classList.remove('on'));
+  el.classList.add('on');
+}
+
+// Monogram
+function onMono(raw){
+  S.mono=raw.toUpperCase().slice(0,3);
+  document.getElementById('mono-in').value=S.mono;
+  document.getElementById('mono-badge').textContent=S.mono;
+  document.getElementById('dc-mono').textContent=S.mono||'—';
+}
+
+// Position toggle
+function togglePos(el){
+  const pos=el.dataset.pos;
+  if(el.classList.contains('on')){
+    el.classList.remove('on');
+    S.positions=S.positions.filter(p=>p!==pos);
+  } else {
+    if(S.positions.filter(p=>p!=='left_cuff').length>=2){ showToast('Max 2 add-on positions'); return; }
+    el.classList.add('on');
+    S.positions.push(pos);
+  }
+  S.addons=S.positions.filter(p=>p!=='left_cuff').length;
+  S.total=79+S.addons*5;
+  updatePrice();
+}
+function updatePrice(){
+  document.getElementById('price-disp').textContent='$'+S.total;
+  document.getElementById('nav-price').textContent='$'+S.total;
+  const ar=document.getElementById('addon-row');
+  if(S.addons>0){
+    ar.style.display='flex';
+    document.getElementById('addon-v').textContent='+$'+(S.addons*5);
+    document.getElementById('addon-k').textContent='Embroidery add-ons (×'+S.addons+')';
+  } else { ar.style.display='none'; }
+}
+
+function pulseCfg(){
+  const p=document.getElementById('cfg-photo');
+  p.style.opacity='.5'; setTimeout(()=>p.style.opacity='1',200);
+}
+
+// Submit
+function checkReady(){ document.getElementById('sub-btn').disabled=!document.getElementById('w-chk').checked; }
+
+async function submitOrder(){
+  const o={
+    order_id:'AVP-'+Math.floor(1000+Math.random()*9000),
+    timestamp:new Date().toISOString(),
+    first_name:v('f-first'), last_name:v('f-last'),
+    email:v('f-email'), phone:v('f-phone'), address:v('f-addr'), notes:v('f-notes'),
+    collar:S.collar, cuff:S.cuff, mono:S.mono,
+    positions:S.positions.join(', '), fit:S.fit, addons:S.addons,
+    neck:v('m-neck'), shoulder:v('m-shoulder'), chest:v('m-chest'),
+    waist:v('m-waist'), sleeve:v('m-sleeve'), bicep:v('m-bicep'),
+    wrist:v('m-wrist'), length:v('m-length'), ref:v('m-ref'),
+    total:S.total, deposit:20, balance:S.total-20,
+    warning:true, status:'pending_review'
+  };
+  if(!o.email||!o.first_name){ showToast('Please fill in name and email'); return; }
+  if(!o.neck||!o.chest){ showToast('Please enter at least neck and chest measurements'); return; }
+
+  const btn=document.getElementById('sub-btn');
+  btn.disabled=true; btn.textContent='Sending…';
+
+  try {
+    if(GS_URL!=='YOUR_GOOGLE_APPS_SCRIPT_URL')
+      await fetch(GS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(o)});
+    if(TG_TOK!=='YOUR_TELEGRAM_BOT_TOKEN')
+      await fetch('https://api.telegram.org/bot'+TG_TOK+'/sendMessage',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({chat_id:TG_CHAT,parse_mode:'HTML',text:tgMsg(o)})
+      });
+  } catch(e){ console.log('Order:',o); }
+
+  document.getElementById('form-fields').style.display='none';
+  document.getElementById('success').style.display='block';
+  document.getElementById('ord-id').textContent=o.order_id;
+  document.getElementById('order-form').scrollIntoView({behavior:'smooth'});
+  showToast('Order submitted ✦','gold');
+}
+
+function v(id){ return (document.getElementById(id)||{}).value||'' }
+
+function tgMsg(o){
+  return `🎩 <b>NEW ORDER — ${o.order_id}</b>\n\n👤 <b>${o.first_name} ${o.last_name}</b>\n📧 ${o.email}\n📱 ${o.phone||'—'}\n\n👔 ${o.collar} · ${o.cuff} · Mono: <b>${o.mono||'—'}</b>\n📍 Positions: ${o.positions}\n✂️ Fit: ${o.fit} | Add-ons: ${o.addons}\n\n📐 <b>MEASUREMENTS</b>\nNeck: ${o.neck}" | Shoulder: ${o.shoulder}" | Chest: ${o.chest}" | Waist: ${o.waist}"\nSleeve: ${o.sleeve}" | Bicep: ${o.bicep}" | Wrist: ${o.wrist}" | Length: ${o.length}"\nRef: ${o.ref||'—'}\n\n💵 Total: $${o.total} | Deposit: $20 | Balance: $${o.balance}\n📦 ${o.address||'—'}\n📝 ${o.notes||'—'}\n⏰ ${o.timestamp}\n\n⚠️ <b>ACTION REQUIRED: Review measurements + send deposit email within 24h</b>`;
+}
+
+let tt;
+function showToast(msg,cls){
+  const t=document.getElementById('toast');
+  clearTimeout(tt); t.textContent=msg; t.className='toast '+(cls||'');
+  t.classList.add('show'); tt=setTimeout(()=>t.classList.remove('show'),3200);
+}
+</script>
+</body>
+</html>
